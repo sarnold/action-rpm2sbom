@@ -1,0 +1,31 @@
+name: "action-rpm2sbom"
+author: sarnold
+description: "Generate SBOM from RPM package dependency chain"
+
+inputs:
+  github_token:
+    description: "GITHUB_TOKEN secret < automatically provided by Github , you don't need to set it >"
+    required: true
+
+  output_file:
+    description: "Filename for SBOM report (default: generated)"
+    default: ""
+    required: false
+
+  rpm_path:
+    description: "Path to directory containing rpm file(s)"
+    default: "rpms"
+    required: false
+
+  package_name:
+    description: "(RPM) parent package name for SBOM report (default: none)"
+    default: ""
+    required: true
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+
+branding:
+  icon: "file-text"
+  color: "green"

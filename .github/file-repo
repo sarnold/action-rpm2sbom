@@ -1,0 +1,5 @@
+[rpm2sbom-repo]
+name=rpm2sbom CI rpm repo
+baseurl=file:///github/home/rpms
+enabled=1
+gpgcheck=0
